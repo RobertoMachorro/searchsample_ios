@@ -12,6 +12,7 @@
 		E966F62F1FE21BE5005D250E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E966F62E1FE21BE5005D250E /* Assets.xcassets */; };
 		E966F6321FE21BE5005D250E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E966F6301FE21BE5005D250E /* LaunchScreen.storyboard */; };
 		E966F6351FE21BE5005D250E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E966F6341FE21BE5005D250E /* main.m */; };
+		E966F63D1FF1A813005D250E /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E966F63C1FF1A813005D250E /* TestTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,8 @@
 		E966F6311FE21BE5005D250E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E966F6331FE21BE5005D250E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E966F6341FE21BE5005D250E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E966F63B1FF1A813005D250E /* TestTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
+		E966F63C1FF1A813005D250E /* TestTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				E966F6301FE21BE5005D250E /* LaunchScreen.storyboard */,
 				E966F6331FE21BE5005D250E /* Info.plist */,
 				E966F6341FE21BE5005D250E /* main.m */,
+				E966F63B1FF1A813005D250E /* TestTableViewController.h */,
+				E966F63C1FF1A813005D250E /* TestTableViewController.m */,
 			);
 			path = "Search Sample";
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E966F63D1FF1A813005D250E /* TestTableViewController.m in Sources */,
 				E966F6351FE21BE5005D250E /* main.m in Sources */,
 				E966F6271FE21BE5005D250E /* AppDelegate.m in Sources */,
 			);
