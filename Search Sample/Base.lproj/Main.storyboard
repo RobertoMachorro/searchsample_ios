@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,6 +26,32 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qcw-h2-2dQ" id="igF-39-ICb">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKe-pS-RW9">
+                                            <rect key="frame" x="16" y="11" width="255" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhU-R6-Zae">
+                                            <rect key="frame" x="279" y="11" width="80" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="Q7I-Ji-OH2"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YKe-pS-RW9" firstAttribute="top" secondItem="igF-39-ICb" secondAttribute="topMargin" id="9u0-A1-Tz9"/>
+                                        <constraint firstItem="YKe-pS-RW9" firstAttribute="firstBaseline" secondItem="dhU-R6-Zae" secondAttribute="firstBaseline" id="Guf-qO-o38"/>
+                                        <constraint firstItem="dhU-R6-Zae" firstAttribute="bottom" secondItem="igF-39-ICb" secondAttribute="bottomMargin" id="Mm8-AF-C2r"/>
+                                        <constraint firstItem="dhU-R6-Zae" firstAttribute="trailing" secondItem="igF-39-ICb" secondAttribute="trailingMargin" id="Y0M-wT-lwj"/>
+                                        <constraint firstItem="YKe-pS-RW9" firstAttribute="leading" secondItem="igF-39-ICb" secondAttribute="leadingMargin" id="df7-gh-cSd"/>
+                                        <constraint firstItem="YKe-pS-RW9" firstAttribute="centerY" secondItem="dhU-R6-Zae" secondAttribute="centerY" id="sWj-sd-IE4"/>
+                                        <constraint firstItem="dhU-R6-Zae" firstAttribute="leading" secondItem="YKe-pS-RW9" secondAttribute="trailing" constant="8" symbolic="YES" id="yWh-a9-x0f"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -32,11 +60,14 @@
                             <outlet property="delegate" destination="2q1-oZ-HUz" id="c7O-H0-HEH"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Items Total" id="ujB-zc-by8"/>
+                    </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ApC-gg-8gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="113"/>
+            <point key="canvasLocation" x="848.79999999999995" y="112.89355322338831"/>
         </scene>
     </scenes>
 </document>
