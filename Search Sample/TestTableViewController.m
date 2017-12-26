@@ -11,6 +11,7 @@
 @interface TestTableViewController ()
 
 @property (strong, nonatomic) NSMutableArray<NSNumber *> *data;
+@property (strong, nonatomic) NSNumberFormatter *currencyFormatter;
 
 @end
 
@@ -37,7 +38,22 @@
 	[super didReceiveMemoryWarning];
 }
 
-#pragma mark - Table view data source
+#pragma mark - Properties
+
+- (NSNumberFormatter *)currencyFormatter
+{
+	if (_currencyFormatter != nil) {
+		return _currencyFormatter;
+	}
+	
+	NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+	[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+	_currencyFormatter = formatter;
+	
+	return _currencyFormatter;
+}
+
+#pragma mark - Table View Data Stuff
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return 1;
@@ -51,15 +67,13 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell" forIndexPath:indexPath];
 
 	// [indexPath section], [indexPath row], [indexPath item]
-
 	NSNumber *item = [self.data objectAtIndex:indexPath.row];
-	NSLog(@"Rendering: %d", [item intValue]);
 
 	UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:1];
-	descriptionLabel.text = [NSString stringWithFormat:@"Item %ld", (long)indexPath.row];
+	descriptionLabel.text = [NSString stringWithFormat:@"Random Item %ld", (long)indexPath.row];
 
 	UILabel *amountLabel = (UILabel *)[cell viewWithTag:2];
-	amountLabel.text = [item stringValue];
+	amountLabel.text = [self.currencyFormatter stringFromNumber:item];
 
 	return cell;
 }
