@@ -64,6 +64,9 @@
                         <barButtonItem title="Items Total" id="ujB-zc-by8"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="toolbarTotalsButton" destination="ujB-zc-by8" id="jdM-h5-Fu1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ApC-gg-8gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
