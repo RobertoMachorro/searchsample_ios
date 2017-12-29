@@ -1,0 +1,6 @@
+# All folders ignore
+
+**/.DS_Store
+**/xcuserdata
+
+# Ignore specific files
