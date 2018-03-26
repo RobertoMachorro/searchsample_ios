@@ -48,11 +48,16 @@
 	self.searchController.searchBar.scopeButtonTitles = @[above, exact, below];
 	self.searchController.searchBar.delegate = self;
 
-	self.tableView.tableHeaderView = self.searchController.searchBar;
-	self.toolbarTotalsButton.title = @"";
-	self.definesPresentationContext = YES;
+	if (@available(iOS 11, *)) {
+		self.navigationItem.searchController = self.searchController;
+		self.navigationItem.hidesSearchBarWhenScrolling = YES;
+	} else {
+		self.tableView.tableHeaderView = self.searchController.searchBar;
+	}
 
-	[self.navigationController setToolbarHidden:NO];
+	self.definesPresentationContext = YES;
+	self.toolbarTotalsButton.title = @"";
+	self.navigationController.toolbarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
