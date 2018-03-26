@@ -38,9 +38,9 @@
 		[self.data addObject:[NSNumber numberWithFloat:(dollars+cents)]];
 	}
 
-	NSString *above = NSLocalizedString(@"above", nil);
+	NSString *above = NSLocalizedString(@"Above", nil);
 	NSString *exact = NSLocalizedString(@"Exact", nil);
-	NSString *below = NSLocalizedString(@"below", nil);
+	NSString *below = NSLocalizedString(@"Below", nil);
 
 	self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
 	self.searchController.searchResultsUpdater = self;
