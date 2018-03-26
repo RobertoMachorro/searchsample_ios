@@ -51,6 +51,8 @@
 	self.tableView.tableHeaderView = self.searchController.searchBar;
 	self.toolbarTotalsButton.title = @"";
 	self.definesPresentationContext = YES;
+
+	[self.navigationController setToolbarHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning {
