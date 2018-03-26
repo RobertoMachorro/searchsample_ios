@@ -16,3 +16,8 @@ The code is self explanatory, however, it is recommended you review the commit h
 7. Search controller functionality is implemented via delegation and UISearchController.
 8. Embedded Table View Controller into Navigation Controller.
 9. Activated toolbar in Navigation Controller.
+10. Enabled hiding search bar option when scrolling.
+11. Added compatibility accross iOS versions.
+
+**PENDING:** Toolbar visibility when soft-keyboard is enabled.
+
