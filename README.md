@@ -14,3 +14,5 @@ The code is self explanatory, however, it is recommended you review the commit h
 5. A custom Table View Controller class is created for the prior view, with randomized data.
 6. Data is formatted and presented on the table view.
 7. Search controller functionality is implemented via delegation and UISearchController.
+8. Embedded Table View Controller into Navigation Controller.
+9. Activated toolbar in Navigation Controller.
