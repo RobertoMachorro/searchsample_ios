@@ -65,6 +65,10 @@
 	[super didReceiveMemoryWarning];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+	[self registerForKeyboardNotifications];
+}
+
 #pragma mark - Properties
 
 - (NSNumberFormatter *)currencyFormatter
@@ -174,6 +178,47 @@
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
 	[self.navigationController setToolbarHidden:YES animated:YES];
+}
+
+#pragma mark - Toolbar Stuff
+
+- (void)registerForKeyboardNotifications
+{
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(keyboardWasShown:)
+												 name:UIKeyboardDidShowNotification object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(keyboardWillBeHidden:)
+												 name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWasShown:(NSNotification *)note
+{
+	NSDictionary *userInfo = note.userInfo;
+	NSTimeInterval duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+	UIViewAnimationCurve curve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
+	
+	CGRect keyboardFrameEnd = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+	keyboardFrameEnd = [self.view convertRect:keyboardFrameEnd fromView:nil];
+	
+	[UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionBeginFromCurrentState | curve animations:^{
+		self.view.frame = CGRectMake(0, 0, keyboardFrameEnd.size.width, keyboardFrameEnd.origin.y);
+	} completion:nil];
+}
+
+- (void)keyboardWillBeHidden:(NSNotification *)note
+{
+	NSDictionary *userInfo = note.userInfo;
+	NSTimeInterval duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+	UIViewAnimationCurve curve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
+	
+	CGRect keyboardFrameEnd = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+	keyboardFrameEnd = [self.view convertRect:keyboardFrameEnd fromView:nil];
+	
+	[UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionBeginFromCurrentState | curve animations:^{
+		self.view.frame = CGRectMake(0, 0, keyboardFrameEnd.size.width, keyboardFrameEnd.origin.y);
+	} completion:nil];
 }
 
 #pragma mark - What I may be missing...
